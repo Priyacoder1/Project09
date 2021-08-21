@@ -1,20 +1,40 @@
-var avg;
-var weight = [35,38,42,45,43,34,36,41,48,32];
-var sum = 0;
+var box;
 
 function setup() {
   createCanvas(400,400);
-  for(var i=0;i<weight.length;i=i+1){
-    sum=sum+weight[i];
-  }
-  avg = sum/weight.length;
-  console.log(avg);
+  box = createSprite(200,200,30,30);
+
 }
 
 function draw() 
 {
-  background(30);
+   background("white");
+
+  if (keyIsDown(RIGHT_ARROW)) 
+  {
+    box.position.x = box.position.x +5;
+  }
+
+    if (keyIsDown(LEFT_ARROW)) 
+  {
+    box.position.x= box.position.x -5;
+    
+  }
+ 
+    if (keyIsDown(UP_ARROW)) 
+  {
+    box.position.y = box.position.y - 5;
+   
+  }
+
+  if (keyIsDown(DOWN_ARROW)) 
+  {
+    box.position.y = box.position.y + 5;
+  }
+
+  drawSprites();
 }
 
- 
+
+
 
